@@ -1,0 +1,233 @@
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+body {
+  margin: 0;
+}
+body > div {
+  margin-top: 20px;
+}
+
+.clock-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 260px;
+}
+.clock {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.clock-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 10px;height: 10px;
+  background-color: rgb(194, 28, 28);
+  z-index: 19;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px 0px #000;
+}
+
+.minute-hand,.hour-hand,.second-hand{
+  width: 80px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
+  transform-origin: left; 
+  border-radius: 2px;
+  
+}
+.hour-hand {
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+}
+.second-hand {
+  height: 1px;
+  width: 100px;
+}
+.hour-hand img {
+  position: absolute;
+  left: 11px;
+  top: -38px;
+  right: 0px;
+  bottom: 0px;
+  transform: rotate(90deg);
+  height: 80px;
+  
+}
+.minute-hand img{
+  position: absolute;
+  left: 24px;
+  top: -53px;
+  right: 0px;
+  bottom: 0px;
+  transform: rotate(90deg);
+  height: 110px;
+}
+.second-hand{
+  background-color:#c01c28;
+}
+
+
+/*! Ying Yang Theme */
+.yy-theme-bg {
+  background: url('./themes/ying_yang/lines.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.yy-theme {
+  background-image: url('./themes/ying_yang/yy_bg_1.svg'), url('./themes/ying_yang/yy_bg_2.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 2px 8px black;
+  border-radius: 50%;
+}
+
+/*!  Roman Theme */
+.roman-theme-bg{
+  background-color: #c01c28;
+  border-radius: 50%;
+  border: 4px solid black;
+  box-shadow: 0px 0px 4px 2px #242526;
+}
+.roman-theme {
+  width: 96%;
+  height: 96%;
+  background-image: url('./themes/roman/bg_roman.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.roman-theme .clock-center{
+  background-color: #000;
+}
+.roman-theme .second-hand {
+  background-color: rgb(251, 225, 23);
+  border: 1px solid black;
+  width: 120px;
+  height: 4px;
+  border-radius: 20px;
+}
+
+/*! Roman Alt Theme */
+.roman-theme-alt-bg{
+  background-color: rgb(31, 207, 226);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px #242526;
+}
+.roman-theme-alt {
+  width: 100%;
+  height: 100%;
+  background-image: url('./themes/roman_alt/bg_roman_alt.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.roman-theme-alt .hour-hand img,
+.roman-theme-alt .minute-hand img {
+  filter: invert();
+}
+
+/*! Classic Theme */
+.classic-theme-bg{
+  background-color: #fbfbfb;
+  border-radius: 50%;
+}
+.classic-theme {
+  width: 100%;
+  height: 100%;
+  background-image: url('./themes/classic/bg_classic.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.classic-theme .hour-hand img,
+.classic-theme .minute-hand img {
+  filter: invert();
+}
+
+/*! Default Clock Numbers */
+/* .twelve,.six,.three,.nine{
+  position: absolute;
+}
+.twelve,.six {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.six {
+  bottom: 0;
+}
+.nine,.three {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.three {
+  right: 0;
+} */
+
+/*! Theme Changer */
+.clock-themes {
+  display: flex;
+  padding: .5rem 1rem;
+  width: max-content;
+  transform: translateX(-100%);
+  position: relative;
+  transition: all .3s ease;
+}
+.clock-themes-close{
+  transform: translateX(0%);
+  transition: all .3s ease;
+}
+
+.open-themes {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  outline: none;
+  right: -50px;
+  cursor: pointer;
+  padding-top: 10px;
+}
+.open-themes-revert{
+  transform: rotateY(180deg);
+}
+.open-themes:hover {
+  filter: invert();
+}
+.clock-themes > div > img {
+  max-width: 40px;
+  height: auto;
+}
+.clock-themes > div {
+  margin-right: .5rem;
+  border: 1px solid #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  cursor: pointer;
+}
+.clock-themes > div:hover {
+  box-shadow: 0px 0px 4px #ababab;
+  
+}

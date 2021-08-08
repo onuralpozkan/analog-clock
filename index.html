@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock-container yy-theme-bg">
+    <div class="clock yy-theme">
+        <div class="hour-hand" id="hourHand">
+          <img src="./themes/hands_white.svg" alt="">
+        </div>
+        <div class="minute-hand" id="minuteHand">
+          <img src="./themes/hands_white.svg" alt="">
+        </div>
+        <div class="second-hand" id="secondHand"></div>
+        <div class="clock-center"></div>
+    </div>
+  </div>
+
+  <div class="clock-themes">
+    <button class="open-themes" id="openBtn">
+      <img src="./themes/right-arrow.svg" alt="">
+    </button>
+    <div class="theme theme1" data-theme="yy-theme">
+      <img src="./themes/thumbs/ying-yang-theme.png" alt="">
+    </div>
+    <div class="theme" data-theme="roman-theme">
+      <img src="./themes/thumbs/Roman-theme.png" alt="">
+    </div>
+    <div class="theme" data-theme="roman-theme-alt">
+      <img src="./themes/thumbs/roman-theme-alt.png" alt="">
+    </div>
+    <div class="theme" data-theme="classic-theme">
+      <img src="./themes/thumbs/classic-theme.png" alt="">
+    </div>
+    
+  </div>
+  
+  <script src="clock.js"></script>
+</body>
+</html>
